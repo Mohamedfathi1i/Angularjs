@@ -16,7 +16,9 @@
 
 <body>
     <main ng-app="myApp" ng-controller="firstController">
-        <section ng-init="age=25 ">
+        <section ng-init="age=25 ; myCol='lightblue'; font=20 ; person={firstName:'John2',lastName:'Doe2'}">
+
+            <input ng-style="{ 'background-color': myCol , 'font-size':font + 'px' }" ng-model="myCol">
             <!-- <section ng-init="firstName='Mohamed' ; lastName='Fathi'; age=25 "> -->
             <input class="form-control" type="text" ng-model="firstName">
             <input class="form-control" type="text" ng-model="lastName">
@@ -25,6 +27,8 @@
             <p>{{age + 5}}</p>
             <p ng-bind="age"></p>
             {{ firstName + " " + lastName }}
+            <p>The name is {{ person.lastName }}</p>
+
         </section>
 
 
